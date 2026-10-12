@@ -1,0 +1,200 @@
+
+:root {
+    --primary-color: #2563eb;       /* Xanh chủ đạo */
+    --primary-dark: #1d4ed8;        /* Xanh đậm khi hover */
+    --text-color: #1f2937;          /* Màu chữ chính */
+    --text-light: #4b5563;          /* Màu chữ phụ */
+    --bg-color: #f9fafb;            /* Màu nền trang */
+    --card-bg: #ffffff;             /* Màu nền thẻ/khối */
+    --border-color: #e5e7eb;        /* Màu đường viền */
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* Đảm bảo không bị cuộn ngang */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   3. MOBILE-FIRST LAYOUT & COMPONENTS
+   ========================================= */
+
+/* Header & Navigation */
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+nav {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* Sections */
+section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Thông tin cá nhân & Ảnh */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
+}
+
+.profile-card img {
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    object-fit: cover;
+}
+
+/* Form liên hệ */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input, textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+}
+
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xl);
+}
+
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: var(--spacing-md) var(--spacing-xl);
+    }
+
+    .profile-card {
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: var(--spacing-xl);
+    }
+    
+   
+}
