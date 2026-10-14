@@ -36,10 +36,6 @@ img {
     display: block;
 }
 
-/* =========================================
-   3. MOBILE-FIRST LAYOUT & COMPONENTS
-   ========================================= */
-
 /* Header & Navigation */
 header {
     background-color: var(--card-bg);
