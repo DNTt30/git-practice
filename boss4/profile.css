@@ -1,7 +1,8 @@
 
 :root {
-    --primary-color: #2563eb;       /* Xanh chủ đạo */
-    --primary-dark: #1d4ed8;        /* Xanh đậm khi hover */
+    --primary-color: #303392;       /* Xanh Codestar */
+    --primary-dark: #222466;        /* Xanh đậm Codestar khi hover */
+    --logo-red: #e31b23;            /* Đỏ logo Codestar */
     --text-color: #1f2937;          /* Màu chữ chính */
     --text-light: #4b5563;          /* Màu chữ phụ */
     --bg-color: #f9fafb;            /* Màu nền trang */

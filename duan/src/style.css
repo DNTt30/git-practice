@@ -1,4 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* Bảng màu thương hiệu Codestar */
+  --color-brand-primary: #303392; /* Xanh Codestar */
+  --color-brand-danger: #e31b23;  /* Đỏ logo Codestar */
+  --color-brand-logo: #e31b23;
+
+  /* Bảng sắc thái xanh Codestar (#303392) */
+  --color-brand-50: #f0f0fa;
+  --color-brand-100: #dedef3;
+  --color-brand-200: #bcbde7;
+  --color-brand-300: #8c8ed5;
+  --color-brand-400: #5d60bf;
+  --color-brand-500: #303392;
+  --color-brand-600: #292b7c;
+  --color-brand-700: #222466;
+  --color-brand-800: #1a1b4d;
+  --color-brand-900: #121334;
+
+  /* Bảng sắc thái đỏ logo Codestar (#e31b23) */
+  --color-brand-red-50: #fef2f2;
+  --color-brand-red-100: #fee2e2;
+  --color-brand-red-200: #fecaca;
+  --color-brand-red-300: #fca5a5;
+  --color-brand-red-400: #f87171;
+  --color-brand-red-500: #e31b23;
+  --color-brand-red-600: #c9141b;
+  --color-brand-red-700: #a71117;
+
+  /* Font chữ */
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+}
+
 :root {
+  --color-brand-primary: #303392; /* Màu xanh Codestar */
+  --color-brand-danger: #e31b23; /* Màu đỏ logo */
+  --color-brand-50: #f5f3ff;
+  --color-brand-700: #ede9fe;
+  --color-star-500: #ddd6fe;
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -292,5 +333,38 @@ code {
   &::after {
     right: 0;
     border-right-color: var(--border);
+  }
+}
+
+@layer components {
+  button:not(:disabled) {
+    @apply bg-brand-primary text-white
+           font-semibold rounded-lg
+           transition-colors duration-300
+           cursor-pointer;
+  }
+
+  button:not(:disabled):hover {
+    @apply bg-brand-700;
+  }
+
+  button:focus-visible {
+    @apply outline-2 outline-offset-2
+           outline-brand-primary;
+  }
+
+  button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  /* Nút màu đỏ logo Codestar (#e31b23) */
+  .btn-danger,
+  .btn-logo {
+    @apply bg-brand-danger text-white;
+  }
+
+  .btn-danger:not(:disabled):hover,
+  .btn-logo:not(:disabled):hover {
+    @apply bg-brand-red-600;
   }
 }

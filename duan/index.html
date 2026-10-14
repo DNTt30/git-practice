@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>git-practice</title>
+    <!-- File CSS chứa Tailwind v4 của bạn -->
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- ĐÃ XÓA script CDN Tailwind vì dùng chung với file CSS v4 qua Vite -->
+  </head>
+  <body class="bg-(--bg) text-(--text) font-sans">
+    
+  
+    <header class="shadow-sm border-b border-(--border) py-4 mb-8">
+      <nav class="max-w-4xl mx-auto px-4">
+        <ul class="flex justify-center gap-8 list-none p-0 m-0">
+          <li>
+            <a href="#gioi-thieu"
+              class="hover:text-brand-primary font-medium transition-colors">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about"
+              class="hover:text-brand-primary font-medium transition-colors">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#contact"
+              class="hover:text-brand-primary font-medium transition-colors">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <main class="max-w-4xl mx-auto px-4 space-y-12">
+      <!-- Giới thiệu -->
+      <section id="gioi-thieu" class="text-center">
+        <h2 class="text-2xl font-bold mb-4">Giới thiệu</h2>
+        <p class="text-lg">Be Vietnam Pro</p>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="text-center">
+        <h2 class="text-2xl font-bold mb-4">About</h2>
+        
+      </section>
+
+      <!-- Sở thích -->
+      <section class="text-center">
+        <h2 class="text-2xl font-bold mb-4">Sở thích cá nhân</h2>
+        <ul class="list-disc list-inside inline-block text-left">
+          <li>Sở thích 1</li>
+          <li>Sở thích 2</li>
+        </ul>
+      </section>
+
+      <!-- Contact Form -->
+      
+      <section
+        id="contact"
+        class="max-w-xl mx-auto bg-(--code-bg) p-6 rounded-xl border border-(--border)"
+      >
+        <form class="space-y-4">
+          <h2 class="text-2xl font-bold mb-4 text-center">
+            Contact Form
+          </h2>
+
+          <div class="flex flex-col text-left">
+            <label for="name" class="font-medium mb-1">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="border border-(--border) p-2 rounded-lg bg-(--bg)"
+            />
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <button
+              type="button"
+              id="btn"
+              class="flex-1 bg-brand-primary hover:bg-brand-700 text-white font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+            >
+              Gửi thông tin (Codestar Blue)
+            </button>
+            <button
+              type="reset"
+              class="btn-danger hover:bg-brand-red-600 text-white font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+            >
+              Hủy bỏ (Logo Red)
+            </button>
+          </div>
+        </form>
+      </section>
+
+
+      <!-- My Schedule -->
+      <section class="text-center">
+        <h2 class="text-2xl font-bold mb-4">My schedule</h2>
+        <div class="overflow-x-auto flex justify-center">
+          <table class="border-collapse border border-(--border) w-full max-w-md">
+            <thead>
+              <tr class="bg-(--code-bg)">
+                <th class="border border-(--border) p-2 text-lg font-bold">T2</th>
+                <th class="border border-(--border) p-2 text-lg font-bold">T4</th>
+                <th class="border border-(--border) p-2 text-lg font-bold">T6</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-(--border) p-2 text-lg font-semibold">js</td>
+                <td class="border border-(--border) p-2 text-slate-600">html</td>
+                <td class="border border-(--border) p-2 text-emerald-500 font-medium">css</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div id="app"></div>
+    </main>
+
+    <!-- Footer đã được chuyển vào đúng vị trí bên trong body -->
+    <footer class="text-center py-6 bg-(--code-bg) border-t border-(--border) mt-12">
+      <p>(C) 2024 Duong Ngoc Tu.</p>
+    </footer>
+
+    <!-- Script của Vite -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
