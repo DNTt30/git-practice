@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd duan && npm run build",
+  "outputDirectory": "duan/dist"
+}
