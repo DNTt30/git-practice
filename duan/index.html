@@ -1,141 +1,268 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>git-practice</title>
-    <!-- File CSS chứa Tailwind v4 của bạn -->
-    <link rel="stylesheet" href="/src/style.css" />
+    <title>Khóa Học Codestar</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- ĐÃ XÓA script CDN Tailwind vì dùng chung với file CSS v4 qua Vite -->
-  </head>
-  <body class="bg-(--bg) text-(--text) font-sans">
     
-  
-    <header class="shadow-sm border-b border-(--border) py-4 mb-8">
-      <nav class="max-w-4xl mx-auto px-4">
-        <ul class="flex justify-center gap-8 list-none p-0 m-0">
-          <li>
-            <a href="#gioi-thieu"
-              class="hover:text-brand-primary font-medium transition-colors">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#about"
-              class="hover:text-brand-primary font-medium transition-colors">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#contact"
-              class="hover:text-brand-primary font-medium transition-colors">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <!-- File CSS Tailwind v4 chuẩn @theme qua Vite -->
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- CDN dự phòng: Giúp bạn nhấp đúp mở file trực tiếp hoặc dùng Live Server vẫn hiển thị CSS đầy đủ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#303392',
+              'brand-danger': '#e31b23',
+              'brand-50': '#f0f0fa',
+              'brand-700': '#222466',
+            },
+            fontFamily: {
+              sans: ['"Be Vietnam Pro"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="font-sans bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors">
+
+    <!-- Header đơn giản -->
+    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 py-4 mb-8">
+      <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+        <div class="text-xl font-bold text-brand-primary dark:text-white">
+          CODE<span class="text-brand-danger">STAR</span>
+        </div>
+        <nav class="flex items-center gap-6 text-sm font-medium">
+          <a href="#hero" class="hover:text-brand-primary dark:hover:text-white">Tổng quan</a>
+          <a href="#loi-ich" class="hover:text-brand-primary dark:hover:text-white">3 Lợi ích</a>
+          <a href="#khoa-hoc" class="hover:text-brand-primary dark:hover:text-white">Khoá học</a>
+          <a href="#cam-nhan" class="hover:text-brand-primary dark:hover:text-white">Cảm nhận</a>
+          <a href="#dang-ky" class="hover:text-brand-primary dark:hover:text-white">Đăng ký</a>
+        </nav>
+        <!-- Nút chuyển chế độ Tối/Sáng -->
+        <button 
+          id="theme-toggle" 
+          type="button" 
+          class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 cursor-pointer"
+        >
+          🌓 Đổi nền
+        </button>
+      </div>
     </header>
 
+    <main class="max-w-4xl mx-auto px-4 space-y-16 pb-16">
 
-    <main class="max-w-4xl mx-auto px-4 space-y-12">
-      <!-- Giới thiệu -->
-      <section id="gioi-thieu" class="text-center">
-        <h2 class="text-2xl font-bold mb-4">Giới thiệu</h2>
-        <p class="text-lg">Be Vietnam Pro</p>
+      <!-- 1. Hero: Tiêu đề + CTA -->
+      <section id="hero" class="text-center space-y-4 py-8">
+        <span class="inline-block px-3 py-1 text-xs font-bold rounded-full bg-red-100 text-brand-danger dark:bg-red-950/60">
+          Tuyển sinh khóa mới - Ưu đãi 30%
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          Khóa Học Lập Trình Frontend <br>
+          <span class="text-brand-primary dark:text-blue-400">Thực Chiến Tại Codestar</span>
+        </h1>
+        <p class="text-slate-600 dark:text-slate-300 max-w-xl mx-auto text-base">
+          Từ người mới bắt đầu đến tự tin đi làm Frontend Developer sau 4.5 tháng. Thực hành 80% dự án thực tế.
+        </p>
+        <div class="pt-2 flex justify-center gap-4">
+          <a 
+            href="#dang-ky" 
+            class="px-6 py-3 bg-brand-primary hover:bg-brand-700 text-white font-bold rounded-lg shadow-md transition-colors"
+          >
+            Đăng ký tư vấn ngay
+          </a>
+          <a 
+            href="#khoa-hoc" 
+            class="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-bold rounded-lg transition-colors"
+          >
+            Xem khoá học
+          </a>
+        </div>
       </section>
 
-      <!-- About -->
-      <section id="about" class="text-center">
-        <h2 class="text-2xl font-bold mb-4">About</h2>
-        
+      <!-- 2. 3 Lợi ích -->
+      <section id="loi-ich" class="text-center space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">3 Lợi Ích Khi Học Tại Codestar</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2 shadow-xs">
+            <div class="text-2xl">💻</div>
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">80% Thực Hành</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Không lý thuyết suông, làm 5+ dự án thực tế chuẩn Git để đưa vào CV xin việc.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2 shadow-xs">
+            <div class="text-2xl">👨‍🏫</div>
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Mentor Kèm 1-1</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Giảng viên và trợ giảng sửa lỗi code trực tiếp, giải đáp mọi thắc mắc mỗi ngày.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2 shadow-xs">
+            <div class="text-2xl">🤝</div>
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Hỗ Trợ Việc Làm</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300">Hỗ trợ viết CV, phỏng vấn thử và kết nối tới các công ty đối tác công nghệ.</p>
+          </div>
+        </div>
       </section>
 
-      <!-- Sở thích -->
-      <section class="text-center">
-        <h2 class="text-2xl font-bold mb-4">Sở thích cá nhân</h2>
-        <ul class="list-disc list-inside inline-block text-left">
-          <li>Sở thích 1</li>
-          <li>Sở thích 2</li>
-        </ul>
+      <!-- 3. Lưới khoá học -->
+      <section id="khoa-hoc" class="text-center space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Danh Sách Khoá Học</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <!-- Card 1 -->
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border-2 border-brand-primary space-y-3 shadow-md flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="text-xs font-bold px-2 py-1 rounded-md bg-blue-100 text-brand-primary">Frontend</span>
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Frontend ReactJS Thực Chiến</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">HTML5, CSS3, Tailwind CSS, JavaScript ES6+, ReactJS 19.</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+              <span class="font-bold text-brand-primary dark:text-blue-400">7.500.000đ</span>
+              <a href="#dang-ky" class="text-xs font-bold px-3 py-1.5 rounded-md bg-brand-primary text-white">Đăng ký</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-3 shadow-xs flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="text-xs font-bold px-2 py-1 rounded-md bg-emerald-100 text-emerald-800">Backend</span>
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Backend Node.js & Database</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Node.js, Express, MongoDB, RESTful API, Authentication.</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+              <span class="font-bold text-slate-900 dark:text-white">7.900.000đ</span>
+              <a href="#dang-ky" class="text-xs font-bold px-3 py-1.5 rounded-md bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white">Đăng ký</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-3 shadow-xs flex flex-col justify-between">
+            <div class="space-y-2">
+              <span class="text-xs font-bold px-2 py-1 rounded-md bg-red-100 text-brand-danger">Fullstack</span>
+              <h3 class="font-bold text-lg text-slate-900 dark:text-white">Fullstack Web Developer</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300">Trọn gói từ Frontend ReactJS đến Backend Node.js và triển khai Cloud.</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+              <span class="font-bold text-brand-danger">10.900.000đ</span>
+              <a href="#dang-ky" class="text-xs font-bold px-3 py-1.5 rounded-md bg-brand-danger text-white">Đăng ký</a>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <!-- Contact Form -->
-      
-      <section
-        id="contact"
-        class="max-w-xl mx-auto bg-(--code-bg) p-6 rounded-xl border border-(--border)"
-      >
-        <form class="space-y-4">
-          <h2 class="text-2xl font-bold mb-4 text-center">
-            Contact Form
-          </h2>
+      <!-- 4. Cảm nhận học viên -->
+      <section id="cam-nhan" class="text-center space-y-6">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Cảm Nhận Học Viên</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-3 shadow-xs">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 italic">"Từ người trái ngành sang IT, nhờ mentor kèm sát mà mình đã pass vị trí Frontend Dev tại FPT Software."</p>
+            <p class="text-xs font-bold text-slate-800 dark:text-slate-200">- Tuấn Anh (FPT Software)</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-3 shadow-xs">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 italic">"Giáo trình dạy đúng những gì doanh nghiệp cần, làm xong đồ án tốt nghiệp đi phỏng vấn rất tự tin."</p>
+            <p class="text-xs font-bold text-slate-800 dark:text-slate-200">- Mai Linh (VNPAY)</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-3 shadow-xs">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 italic">"Học ở đây không khí rất vui, bài giảng dễ hiểu và mentor nhiệt tình hỗ trợ kể cả ngoài giờ."</p>
+            <p class="text-xs font-bold text-slate-800 dark:text-slate-200">- Hoàng Nam (Viettel)</p>
+          </div>
+        </div>
+      </section>
 
-          <div class="flex flex-col text-left">
-            <label for="name" class="font-medium mb-1">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="border border-(--border) p-2 rounded-lg bg-(--bg)"
+      <!-- 5. Form đăng ký -->
+      <section id="dang-ky" class="max-w-xl mx-auto bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg space-y-6">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Form Đăng Ký Tư Vấn</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Nhận ngay thông tin học bổng 30% và lộ trình chi tiết</p>
+        </div>
+
+        <form id="consultation-form" class="space-y-4">
+          <div class="flex flex-col text-left space-y-1">
+            <label for="full-name" class="text-xs font-bold text-slate-700 dark:text-slate-300">Họ và tên:</label>
+            <input 
+              type="text" 
+              id="full-name" 
+              name="fullName"
+              required 
+              placeholder="Nhập họ và tên..."
+              class="border border-slate-300 dark:border-slate-600 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-700 text-sm outline-hidden focus:border-brand-primary"
             />
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3 pt-2">
-            <button
-              type="button"
-              id="btn"
-              class="flex-1 bg-brand-primary hover:bg-brand-700 text-white font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+          <div class="flex flex-col text-left space-y-1">
+            <label for="phone-number" class="text-xs font-bold text-slate-700 dark:text-slate-300">Số điện thoại:</label>
+            <input 
+              type="tel" 
+              id="phone-number" 
+              name="phoneNumber"
+              required 
+              placeholder="Nhập số điện thoại..."
+              class="border border-slate-300 dark:border-slate-600 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-700 text-sm outline-hidden focus:border-brand-primary"
+            />
+          </div>
+
+          <div class="flex flex-col text-left space-y-1">
+            <label for="email" class="text-xs font-bold text-slate-700 dark:text-slate-300">Email:</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              required 
+              placeholder="example@gmail.com"
+              class="border border-slate-300 dark:border-slate-600 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-700 text-sm outline-hidden focus:border-brand-primary"
+            />
+          </div>
+
+          <div class="flex flex-col text-left space-y-1">
+            <label for="course" class="text-xs font-bold text-slate-700 dark:text-slate-300">Khóa học quan tâm:</label>
+            <select 
+              id="course" 
+              name="course" 
+              class="border border-slate-300 dark:border-slate-600 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-700 text-sm outline-hidden focus:border-brand-primary"
             >
-              Gửi thông tin (Codestar Blue)
+              <option value="frontend">Frontend ReactJS Thực Chiến</option>
+              <option value="backend">Backend Node.js & Database</option>
+              <option value="fullstack">Fullstack Web Developer</option>
+            </select>
+          </div>
+
+          <!-- 2 nút màu thương hiệu Codestar -->
+          <div class="flex gap-3 pt-2">
+            <button 
+              type="submit" 
+              id="btn" 
+              class="flex-1 bg-brand-primary hover:bg-brand-700 text-white font-bold py-3 px-4 rounded-lg transition-colors cursor-pointer text-sm"
+            >
+              Gửi đăng ký (Xanh Codestar)
             </button>
-            <button
-              type="reset"
-              class="btn-danger hover:bg-brand-red-600 text-white font-bold py-2.5 px-4 rounded-lg transition-colors cursor-pointer"
+            <button 
+              type="reset" 
+              class="bg-brand-danger hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition-colors cursor-pointer text-sm"
             >
-              Hủy bỏ (Logo Red)
+              Hủy (Đỏ Logo)
             </button>
           </div>
         </form>
       </section>
 
-
-      <!-- My Schedule -->
-      <section class="text-center">
-        <h2 class="text-2xl font-bold mb-4">My schedule</h2>
-        <div class="overflow-x-auto flex justify-center">
-          <table class="border-collapse border border-(--border) w-full max-w-md">
-            <thead>
-              <tr class="bg-(--code-bg)">
-                <th class="border border-(--border) p-2 text-lg font-bold">T2</th>
-                <th class="border border-(--border) p-2 text-lg font-bold">T4</th>
-                <th class="border border-(--border) p-2 text-lg font-bold">T6</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="border border-(--border) p-2 text-lg font-semibold">js</td>
-                <td class="border border-(--border) p-2 text-slate-600">html</td>
-                <td class="border border-(--border) p-2 text-emerald-500 font-medium">css</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <div id="app"></div>
     </main>
 
-    <!-- Footer đã được chuyển vào đúng vị trí bên trong body -->
-    <footer class="text-center py-6 bg-(--code-bg) border-t border-(--border) mt-12">
-      <p>(C) 2024 Duong Ngoc Tu.</p>
+    <!-- 6. Footer -->
+    <footer class="text-center py-8 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-xs">
+      <p class="font-semibold text-slate-700 dark:text-slate-200 mb-1">© 2024 Codestar Academy - Học Viện Lập Trình Thực Chiến.</p>
+      <p>Địa chỉ: Cầu Giấy, Hà Nội | Hotline: 096 888 8888</p>
     </footer>
 
-    <!-- Script của Vite -->
+    <!-- Script Vite & xử lý logic -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
