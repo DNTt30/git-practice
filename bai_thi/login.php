@@ -1,4 +1,5 @@
 <?php
+// session_star() bắt đầu phiên làm việc
 session_start();
 
 // Giả định biến $pdo (PDO, ERRMODE_EXCEPTION) và bảng users(id, email, password_hash) đã có sẵn.
